@@ -10,6 +10,7 @@
 ## Project Info
 
 </br>
+** Java</br>
 ** SpringBoot</br>
 ** MySQL</br>
 * 사용
