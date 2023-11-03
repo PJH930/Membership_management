@@ -1,0 +1,54 @@
+{{>layouts/header}}
+<form action="/membership/addUser" method="get">
+    <div class="p-5">
+        <form class="d-flex">
+            <div class="d-flex justify-content-center mb-2">
+                <input class="form-control me-2" type="search" placeholder="Tel" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </div>
+        </form>
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">UserClass</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Email</th>
+                <th scope="col">Area</th>
+                <th scope="col">Memo</th>
+                <th scope="col">File</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#membershipList}}
+                <tr>
+                    <th>{{ id }}</th>
+                    <td>{{ userClass }}</td>
+                    <td>{{ name }}</td>
+                    <td>{{ date }}</td>
+                    <td>{{ tel }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ area }}</td>
+                    <td>{{ memo }}</td>
+                    <td>{{ file }}</td>
+                    <td>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="/membership/{{id}}/edit"><button type="button" class="btn btn-primary me-2">수정하기</button></a>
+                        </div>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="/membership/{{id}}/delete"><button type="button" class="btn btn-danger me-2">삭제하기</button></a>
+                        </div>
+                    </td>
+                </tr>
+            {{/membershipList}}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center mb-2">
+            <button type="submit" class="btn btn-primary me-2">추가히가</button>
+        </div>
+    </div>
+</form>
+{{>layouts/footer}}

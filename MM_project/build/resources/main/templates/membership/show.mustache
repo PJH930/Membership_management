@@ -1,0 +1,40 @@
+{{>layouts/header}}
+<form action="/membership/addUser" method="get">
+    <div class="p-5">
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">UserClass</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Email</th>
+                <th scope="col">Area</th>
+                <th scope="col">Memo</th>
+                <th scope="col">File</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#membership}}
+                    <tr>
+                        <th>{{ id }}</th>
+                        <td>{{ userClass }}</td>
+                        <td>{{ name }}</td>
+                        <td>{{ date }}</td>
+                        <td>{{ tel }}</td>
+                        <td>{{ email }}</td>
+                        <td>{{ area }}</td>
+                        <td>{{ memo }}</td>
+                        <td>{{ file }}</td>
+                    </tr>
+                {{/membership}}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center mb-2">
+            <button type="submit" class="btn btn-primary me-2">추가히가</button>
+            <a href="/membership/allUser" class="">Go to AllUserList</a>
+        </div>
+    </div>
+</form>
+{{>layouts/footer}}
